@@ -1,0 +1,21 @@
+.form__field {
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+
+  &::placeholder {
+    opacity: 0;
+    color: $c-purple;
+    transition: opacity 0.2s ease 0.4s;
+  }
+}
+
+.screen.active {
+  .form__field {
+    transform: scaleX(100%);
+    transform-origin: right;
+
+    &::placeholder {
+      opacity: 1;
+    }
+  }
+}

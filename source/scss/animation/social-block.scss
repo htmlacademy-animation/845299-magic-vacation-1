@@ -1,0 +1,99 @@
+.social-block__toggler {
+  transition: color 0.2s ease;
+
+  &::before {
+    transition:
+      width 0.2s ease,
+      height 0.2s ease;
+  }
+}
+
+.social-block__list {
+  opacity: 1;
+}
+
+// исчезновение
+.social-block__link {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition:
+    opacity 0.2s ease 0s,
+    transform 0s 0.3s,
+    color 0.2s ease;
+}
+
+// появление
+.social-block--active,
+.social-block__toggler:focus + .social-block__list,
+.page-header--menu-opened {
+  .social-block__link {
+    opacity: 1;
+    transform: translateY(0);
+    transition:
+      opacity 0.2s ease,
+      transform 0.2s ease,
+      color 0.2s ease;
+
+    @media (max-width: $tablet) {
+      transition:
+        opacity 0.6s ease,
+        transform 0.6s ease,
+        color 0.2s ease;
+    }
+
+    @media (max-width: $mobile) {
+      transition:
+        opacity 0.4s ease,
+        transform 0.4s ease,
+        color 0.2s ease;
+    }
+  }
+
+  li {
+    &:nth-child(2) {
+      .social-block__link {
+        transition:
+          opacity 0.2s ease 0.2s,
+          transform 0.2s ease 0.2s,
+          color 0.2s ease;
+
+        @media (max-width: $tablet) {
+          transition:
+            opacity 0.6s ease 0.4s,
+            transform 0.6s ease 0.4s,
+            color 0.2s ease;
+        }
+
+        @media (max-width: $mobile) {
+          transition:
+            opacity 0.4s ease 0.2s,
+            transform 0.4s ease 0.2s,
+            color 0.2s ease;
+        }
+      }
+    }
+
+    &:nth-child(3) {
+      .social-block__link {
+        transition:
+          opacity 0.2s ease 0.4s,
+          transform 0.2s ease 0.4s,
+          color 0.2s ease;
+
+        @media (max-width: $tablet) {
+          transition:
+            opacity 0.6s ease 0.8s,
+            transform 0.6s ease 0.8s,
+            color 0.2s ease;
+        }
+
+        @media (max-width: $mobile) {
+          transition:
+            opacity 0.4s ease 0.4s,
+            transform 0.4s ease 0.4s,
+            color 0.2s ease;
+        }
+      }
+    }
+  }
+}
