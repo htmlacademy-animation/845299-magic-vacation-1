@@ -2,9 +2,12 @@
   transition: color 0.2s ease;
 
   &::before {
+    transform: translate(-50%, -50%) scale(0);
+
     transition:
       width 0.2s ease,
-      height 0.2s ease;
+      height 0.2s ease,
+      transform 0.6s cubic-bezier(.37,1.01,.55,1.51) 0.3s;
   }
 }
 
@@ -94,6 +97,14 @@
             color 0.2s ease;
         }
       }
+    }
+  }
+}
+
+body.load {
+  .social-block__toggler {
+    &::before {
+      transform: translate(-50%, -50%) scale(1);
     }
   }
 }

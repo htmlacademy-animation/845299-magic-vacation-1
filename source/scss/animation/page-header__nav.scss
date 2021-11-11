@@ -24,7 +24,12 @@
 
     &.active {
       &::after {
-        width: 100%;
+        width: 0;
+        right: auto;
+        left: 0;
+        transition:
+          width 0.5s ease 0.3s,
+          background-color 0.5s ease 0.3s;
       }
     }
 
@@ -34,6 +39,27 @@
         width: 100%;
         right: auto;
         left: 0;
+      }
+    }
+  }
+}
+
+body.load {
+  .page-header__nav .js-menu-link.active::after {
+    width: 100%;
+  }
+}
+
+@media
+(max-width: $mobile) and (orientation: landscape),
+(max-width: $tablet) and (orientation: portrait) {
+  body.load {
+    .page-header__nav .js-menu-link.active::after {
+      width: 0;
+    }
+    &.menu-opened {
+      .page-header__nav .js-menu-link.active::after {
+        width: 100%;
       }
     }
   }
