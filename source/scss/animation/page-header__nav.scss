@@ -11,12 +11,9 @@
         width 0.5s,
         background-color 0.5s;
 
-      @media (max-width: $tablet) and (orientation: portrait) {
-        left: auto;
-        right: 0;
-      }
-
-      @media (max-width: $mobile) and (orientation: landscape) {
+      @media
+      (max-width: $tablet) and (orientation: portrait),
+      (max-width: $mobile) and (orientation: landscape) {
         left: auto;
         right: 0;
       }
