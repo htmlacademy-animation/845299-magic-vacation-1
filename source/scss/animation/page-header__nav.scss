@@ -1,0 +1,40 @@
+.page-header__nav {
+  .js-menu-link {
+    transition: color 0.5s;
+
+    &::after {
+      display: block;
+      width: 0;
+      left: auto;
+      right: 0;
+      transition:
+        width 0.5s,
+        background-color 0.5s;
+
+      @media (max-width: $tablet) and (orientation: portrait) {
+        left: auto;
+        right: 0;
+      }
+
+      @media (max-width: $mobile) and (orientation: landscape) {
+        left: auto;
+        right: 0;
+      }
+    }
+
+    &.active {
+      &::after {
+        width: 100%;
+      }
+    }
+
+    &:hover,
+    &:focus {
+      &::after {
+        width: 100%;
+        right: auto;
+        left: 0;
+      }
+    }
+  }
+}
