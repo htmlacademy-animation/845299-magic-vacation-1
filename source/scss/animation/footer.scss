@@ -1,0 +1,14 @@
+.screen__footer {
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 0.6s $appearance-bezier,
+    transform 0.8s $appearance-bezier;
+}
+
+body.load {
+  .screen__footer {
+    opacity: 1;
+    transform: none;
+  }
+};
