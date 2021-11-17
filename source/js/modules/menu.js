@@ -21,12 +21,13 @@ export default () => {
     const menulink = menuLinks[i];
     menulink.addEventListener(`click`, function (ev) {
       ev.preventDefault();
+
       if (window.innerWidth < 1025) {
         header.classList.remove(`page-header--menu-opened`);
         document.body.classList.remove(`menu-opened`);
       }
 
-      if (menulink.baseURI.split(`#`)[1] === `story`) {
+      if (window.location.href.split(`#`)[1] === `story`) {
         bgStoryAnimate(menulink.href);
         return;
       }
