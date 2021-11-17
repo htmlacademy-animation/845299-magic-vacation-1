@@ -10598,6 +10598,8 @@ __webpack_require__.r(__webpack_exports__);
         header.classList.remove(`page-header--menu-opened`);
         document.body.classList.remove(`menu-opened`);
       }
+      console.log(`menulink.href`, menulink.href);
+      console.log(`ev`, ev);
       console.log(`menulink.baseURI`, menulink.baseURI);
       if (menulink.baseURI.split(`#`)[1] === `story`) {
         console.log(`"ЭТО СТОРИ ПРОБЛЕМА В bgStoryAnimate"`);
