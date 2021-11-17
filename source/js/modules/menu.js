@@ -25,6 +25,7 @@ export default () => {
         header.classList.remove(`page-header--menu-opened`);
         document.body.classList.remove(`menu-opened`);
       }
+
       if (window.location.href.split(`#`)[1] === `story`) {
         bgStoryAnimate(menulink.href);
         return;
