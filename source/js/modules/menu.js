@@ -28,6 +28,7 @@ export default () => {
       }
 
       if (menulink.baseURI.split(`#`)[1] === `story`) {
+        console.log(`"ЭТО СТОРИ ПРОБЛЕМА В bgStoryAnimate"`);
         bgStoryAnimate(menulink.href);
         return;
       }
