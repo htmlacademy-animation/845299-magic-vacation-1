@@ -10284,6 +10284,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "bgStoryAnimate", function() { return bgStoryAnimate; });
 const bgStoryAnimate = (linkHref) => {
+  console.log(`АниМАЦИЯ bgStoryAnimate`);
   const screenBgElement = document.getElementById(`story`).querySelector(`.screen-bg`);
   screenBgElement.classList.add(`active`);
   setTimeout(() => {
@@ -10590,6 +10591,7 @@ __webpack_require__.r(__webpack_exports__);
 
   for (let i = 0; i < menuLinks.length; i++) {
     const menulink = menuLinks[i];
+    console.log(`menulink.addEventListener`);
     menulink.addEventListener(`click`, function (ev) {
       ev.preventDefault();
       if (window.innerWidth < 1025) {
