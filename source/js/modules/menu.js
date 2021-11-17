@@ -19,6 +19,7 @@ export default () => {
 
   for (let i = 0; i < menuLinks.length; i++) {
     const menulink = menuLinks[i];
+    console.log(`menulink.addEventListener`);
     menulink.addEventListener(`click`, function (ev) {
       ev.preventDefault();
       if (window.innerWidth < 1025) {
