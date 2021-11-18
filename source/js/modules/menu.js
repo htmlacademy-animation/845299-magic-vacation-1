@@ -1,3 +1,5 @@
+import {bgStoryAnimate} from '../animation/story';
+
 export default () => {
   let header = document.querySelector(`.js-header`);
   let menuToggler = document.querySelector(`.js-menu-toggler`);
@@ -16,11 +18,21 @@ export default () => {
   }
 
   for (let i = 0; i < menuLinks.length; i++) {
-    menuLinks[i].addEventListener(`click`, function () {
+    const menulink = menuLinks[i];
+    menulink.addEventListener(`click`, function (ev) {
+      ev.preventDefault();
+
       if (window.innerWidth < 1025) {
         header.classList.remove(`page-header--menu-opened`);
         document.body.classList.remove(`menu-opened`);
       }
+
+      if (window.location.href.split(`#`)[1] === `story`) {
+        bgStoryAnimate(menulink.href);
+        return;
+      }
+
+      location.href = menulink.href;
     });
   }
 };
