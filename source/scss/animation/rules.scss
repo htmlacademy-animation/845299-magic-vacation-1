@@ -1,0 +1,60 @@
+.rules__list {
+  column-count: auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  column-gap: normal;
+}
+
+.rules__item {
+  width: 45%;
+  &::before, p {
+    animation-timing-function: ease;
+    animation-fill-mode: backwards;
+  }
+  &::before {
+    animation-name: rules__item-toggle;
+    animation-duration: 0.4s;
+  }
+  p {
+    animation-name: rules__item-p;
+    animation-duration: 0.4s;
+    animation-delay: 0.2s;
+  }
+}
+
+@for $i from 1 through 5 {
+  .rules__item:nth-child(#{$i}) {
+    &::before, & p {
+       animation-delay: (0.6s + 0.2s * $i);
+    }
+  }
+}
+
+.rules__link {
+  animation-name: rules__link;
+  animation-timing-function: ease;
+  animation-duration: 0.2s;
+  animation-delay: 2.2s;
+  animation-fill-mode: backwards;
+
+  &::before {
+    right: 0;
+    left: auto;
+    transform: translateY(-50%);
+    opacity: 0;
+    animation-name: rules__link-bg;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+    animation-duration: 0.4s;
+    animation-delay: 1.8s;
+  }
+}
+
+@media
+(max-width: $tablet) and (orientation: portrait),
+(max-width: $mobile) and (orientation: landscape) {
+  .rules__item {
+    width: 100%;
+  }
+}
